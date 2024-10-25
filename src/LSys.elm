@@ -1,6 +1,7 @@
-module LSys exposing (generateSequence, generateTurtle)
+module LSys exposing (generateSequence, generateSeq, lengthOfSeq, generateTurtle)
 
 import Array exposing (Array)
+import Dict exposing (Dict)
 import List.Extra as Extra
 import Model exposing (Model, Symbol)
 import Turtle exposing (..)
@@ -26,6 +27,83 @@ generateSequence iterations axiom rules =
         (String.toList axiom |> Array.fromList)
         (List.range 1 (round iterations))
 
+
+generateSeq : Int -> String -> List ( Char, String ) -> Seq
+generateSeq n axiom rules =
+    let
+        start =
+            seqFromString axiom
+
+        mapping =
+            rules
+                |> List.map (Tuple.mapSecond seqFromString)
+                |> Dict.fromList
+    in
+    generateSeqHelper mapping n start
+
+
+generateSeqHelper : Dict Char Seq -> Int -> Seq -> Seq
+generateSeqHelper mapping n seq =
+    if n <= 0 then
+        seq
+
+    else
+        generateSeqHelper
+            mapping
+            (n - 1)
+            (mapOverSeq (\c -> Maybe.withDefault (Singleton c) (Dict.get c mapping)) seq)
+
+
+type Seq
+    = Empty
+    | Singleton Char
+    | Many (List Char)
+    | Concat (List Seq)
+
+
+seqFromString : String -> Seq
+seqFromString s =
+    case String.toList s of
+        [] ->
+            Empty
+
+        [ c ] ->
+            Singleton c
+
+        cs ->
+            Many cs
+
+
+mapOverSeq :  (Char -> Seq) -> Seq -> Seq
+mapOverSeq f seq =
+    case seq of
+        Empty ->
+            Empty
+
+        Singleton c ->
+            f c
+
+        Many cs ->
+            Concat (List.map f cs)
+
+        Concat ss ->
+            Concat (List.map (mapOverSeq f) ss)
+
+
+lengthOfSeq : Seq -> Int
+lengthOfSeq seq =
+    case seq of
+        Empty ->
+            0
+
+        Singleton _ ->
+            1
+
+        Many cs ->
+            List.length cs
+
+        Concat ss ->
+            List.sum <| List.map lengthOfSeq ss
 
 
 -- Generates a turtle graphics object based on the given model, sequence, symbolAssignments, stepSize, and angle.
