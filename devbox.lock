@@ -1,0 +1,69 @@
+{
+  "lockfile_version": "1",
+  "packages": {
+    "elmPackages.elm@latest": {
+      "last_modified": "2024-10-13T23:44:06Z",
+      "resolved": "github:NixOS/nixpkgs/d4f247e89f6e10120f911e2e2d2254a050d0f732#elmPackages.elm",
+      "source": "devbox-search",
+      "version": "0.19.1",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/gmjyrqv3bf0951fg12fs0vlkwz1q6lsb-elm-0.19.1",
+              "default": true
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/0p7wbk5s9472c5zdlvwmq24bks2iayyb-elm-0.19.1-doc"
+            }
+          ],
+          "store_path": "/nix/store/gmjyrqv3bf0951fg12fs0vlkwz1q6lsb-elm-0.19.1"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/qq8fyjgb58ikaqb04applrjzv7x2akw8-elm-0.19.1",
+              "default": true
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/9i9hf25275xyhjklcn897nfp8ndxn5pz-elm-0.19.1-doc"
+            }
+          ],
+          "store_path": "/nix/store/qq8fyjgb58ikaqb04applrjzv7x2akw8-elm-0.19.1"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/il2202x5dv1n89w1d37g4d90qmzrddh1-elm-0.19.1",
+              "default": true
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/v2hmnqy2ym5w5cy6c9gf425n0aybfyq7-elm-0.19.1-doc"
+            }
+          ],
+          "store_path": "/nix/store/il2202x5dv1n89w1d37g4d90qmzrddh1-elm-0.19.1"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/g3vbchqdmngfzwc4xzv0m04ljz0dbpl7-elm-0.19.1",
+              "default": true
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/m0mi8cmrd6xmmcpi1gkj934jgywkx7nm-elm-0.19.1-doc"
+            }
+          ],
+          "store_path": "/nix/store/g3vbchqdmngfzwc4xzv0m04ljz0dbpl7-elm-0.19.1"
+        }
+      }
+    }
+  }
+}

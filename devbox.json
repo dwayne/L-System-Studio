@@ -1,0 +1,10 @@
+{
+  "packages": [
+    "elmPackages.elm@latest"
+  ],
+  "env": {
+    "project": "$PWD",
+    "build": "$PWD/.build",
+    "PATH": "$PWD/bin:$PATH"
+  }
+}
