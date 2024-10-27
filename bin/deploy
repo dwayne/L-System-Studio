@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# BUILD
+
+build
+
+# PREPARE DEPLOY DIRECTORY
+
+out="$(mktemp -d -t deploy-XXXXX)"
+echo "Prepared the deploy directory: $out"
+
+# PREPARE WORKTREE
+
+branch_name="gh-pages"
+
+git worktree add "$out" "$branch_name"
+git -C "$out" pull
+
+# DEPLOY
+
+src="${build:?}"
+current_branch="$(git branch --show-current)"
+hash="$(git log -n 1 --format='%h' "$current_branch")"
+message="Site updated to commit $hash from the $current_branch branch"
+
+cp -r "$src/"* "$out"
+git -C "$out" add .
+
+if git -C "$out" diff --cached --quiet; then
+  echo "No changes detected."
+else
+  git -C "$out" commit -m "$message"
+  git -C "$out" push -u origin HEAD
+fi
+
+# CLEAN UP
+
+git worktree remove --force "$out"
+rm -rf "$out"
+
+echo "Success!"
