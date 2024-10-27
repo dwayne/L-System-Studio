@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+src="${project:?}"
+out="${build:?}"
+
+clean () {
+  rm -rf "$out"
+}
+
+prepare () {
+  mkdir -p "$out"
+}
+
+build_static () {
+  cp "$src/public/"* "$out"
+}
+
+build_elm () {
+  elm make "$src/src/Main.elm" --output "$out/app.js"
+}
+
+clean && prepare && build_static && build_elm
