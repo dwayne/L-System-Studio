@@ -1,6 +1,54 @@
 {
   "lockfile_version": "1",
   "packages": {
+    "elmPackages.elm-format@latest": {
+      "last_modified": "2024-10-13T23:44:06Z",
+      "resolved": "github:NixOS/nixpkgs/d4f247e89f6e10120f911e2e2d2254a050d0f732#elmPackages.elm-format",
+      "source": "devbox-search",
+      "version": "0.8.7",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/xcggdgqwsqz9v050jp87aca2r8f55pq7-elm-format-0.8.7",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/xcggdgqwsqz9v050jp87aca2r8f55pq7-elm-format-0.8.7"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/4jhj8i69n8f3k87n131aznkx5psv11gr-elm-format-0.8.7",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/4jhj8i69n8f3k87n131aznkx5psv11gr-elm-format-0.8.7"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/8k7pas6paday0d1sbdl9cfyq12rlpsva-elm-format-0.8.7",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/8k7pas6paday0d1sbdl9cfyq12rlpsva-elm-format-0.8.7"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/2rfrgf5p00c1ypirv0wjx4i8d0mgggii-elm-format-0.8.7",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/2rfrgf5p00c1ypirv0wjx4i8d0mgggii-elm-format-0.8.7"
+        }
+      }
+    },
     "elmPackages.elm@latest": {
       "last_modified": "2024-10-13T23:44:06Z",
       "resolved": "github:NixOS/nixpkgs/d4f247e89f6e10120f911e2e2d2254a050d0f732#elmPackages.elm",
