@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+#
+# Usage: check
+#
+
+set -euo pipefail
+
+# Format
+
+if ! format --validate &>/dev/null; then
+  format --validate
+fi
+
+# # Review
+
+# if ! elm-review &>/dev/null; then
+#   elm-review
+# fi
+
+# Test
+
+if ! elm-test &>/dev/null; then
+  elm-test
+fi
+
+# Build
+
+if ! build &>/dev/null; then
+  build
+fi
