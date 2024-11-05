@@ -1,7 +1,8 @@
 {
   "packages": [
     "elmPackages.elm@latest",
-    "elmPackages.elm-format@latest"
+    "elmPackages.elm-format@latest",
+    "elmPackages.elm-test@latest"
   ],
   "env": {
     "project": "$PWD",
