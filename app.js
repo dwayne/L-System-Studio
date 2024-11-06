@@ -5834,8 +5834,8 @@ var $elm$core$Platform$sendToSelf = _Platform_sendToSelf;
 var $elm$core$Process$spawn = _Scheduler_spawn;
 var $elm$browser$Browser$AnimationManager$onEffects = F3(
 	function (router, subs, _v0) {
-		var request = _v0.request;
 		var oldTime = _v0.oldTime;
+		var request = _v0.request;
 		var _v1 = _Utils_Tuple2(request, subs);
 		if (_v1.a.$ === 'Nothing') {
 			if (!_v1.b.b) {
@@ -5885,8 +5885,8 @@ var $elm$time$Time$Posix = function (a) {
 var $elm$time$Time$millisToPosix = $elm$time$Time$Posix;
 var $elm$browser$Browser$AnimationManager$onSelfMsg = F3(
 	function (router, newTime, _v0) {
-		var subs = _v0.subs;
 		var oldTime = _v0.oldTime;
+		var subs = _v0.subs;
 		var send = function (sub) {
 			if (sub.$ === 'Time') {
 				var tagger = sub.a;
@@ -6725,10 +6725,10 @@ var $avh4$elm_color$Color$hsla = F4(
 		return A4($avh4$elm_color$Color$RgbaSpace, r, g, b, alpha);
 	});
 var $avh4$elm_color$Color$fromHsla = function (_v0) {
-	var hue = _v0.hue;
-	var saturation = _v0.saturation;
-	var lightness = _v0.lightness;
 	var alpha = _v0.alpha;
+	var lightness = _v0.lightness;
+	var saturation = _v0.saturation;
+	var hue = _v0.hue;
 	return A4($avh4$elm_color$Color$hsla, hue, saturation, lightness, alpha);
 };
 var $elm$core$Basics$isNaN = _Basics_isNaN;
