@@ -18,7 +18,7 @@ build_static () {
 }
 
 build_elm () {
-  elm make "$src/src/Main.elm" --output "$out/app.js"
+  elm make "$src/src/Main.elm" --debug --output "$out/app.js"
 }
 
 clean && prepare && build_static && build_elm
